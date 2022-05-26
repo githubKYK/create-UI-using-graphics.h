@@ -7,7 +7,7 @@ public:
 	Button(const int&, const int&, const int&, const int&, char*);
 
 	void display(const int&, const int&, char*, int);
-	void waitEvent(const int&, const int&);
+	void waitEvent(const int&, const int&, bool&);
 	
 	void setText(char*);
 
@@ -18,8 +18,7 @@ private:
 };
 
 Button::Button():RootUI() {
-	strcpy(text, "Button");
-	textLen = 7;
+	setText(const_cast<char*>("Button"));
 }
 
 Button::Button(const int& sX, const int& sY, const int& sW, const int& sH, char* sT):RootUI(sX, sY, sW, sH) {
@@ -49,7 +48,7 @@ void Button::display(const int& mode, const int& textMode = 0, char* textWrite =
 	}
 }
 
-void Button::waitEvent(const int& mouseX, const int& mouseY) {
+void Button::waitEvent(const int& mouseX, const int& mouseY, bool& isClick) {
 	if (displayStatus == NORMAL && mouseIn()) {
 		display(ACTIVE);
 		displayStatus = ACTIVE;
@@ -57,5 +56,12 @@ void Button::waitEvent(const int& mouseX, const int& mouseY) {
 	else if(displayStatus == ACTIVE && !mouseIn()) {
 		display(NORMAL);
 		displayStatus = NORMAL;
+	}
+
+	if (mouseClick()) {
+		isClick = 1;
+	}
+	else {
+		isClick = 0;
 	}
 }

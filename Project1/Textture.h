@@ -19,10 +19,7 @@ private:
 };
 
 Textture::Textture():RootUI() {
-
-	strcpy_s(text, const_cast<char*>("Button"));
-
-	textLen = 6;
+	setText(const_cast<char*>("Textture"));
 }
 
 Textture::Textture(const int& sX, const int& sY, const int& sW, const int& sH, char* sT):RootUI(sX, sY, sW, sH) {

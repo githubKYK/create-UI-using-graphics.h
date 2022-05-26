@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
+    <ClInclude Include="Label.h" />
     <ClInclude Include="Mymath.h" />
     <ClInclude Include="RootUI.h" />
     <ClInclude Include="Textture.h" />
