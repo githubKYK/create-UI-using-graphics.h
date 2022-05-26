@@ -130,7 +130,7 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FunctionUI.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Mymath.h" />
     <ClInclude Include="RootUI.h" />
     <ClInclude Include="Textture.h" />

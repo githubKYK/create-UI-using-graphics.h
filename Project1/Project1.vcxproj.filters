@@ -38,7 +38,7 @@
     <ClInclude Include="RootUI.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
-    <ClInclude Include="FunctionUI.h">
+    <ClInclude Include="Button.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>
