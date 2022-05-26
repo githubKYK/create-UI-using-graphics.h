@@ -30,6 +30,29 @@ public:
 
 	void drawBorder(const int&, const int&, const int&, const int&, const int&, const int&);
 
+	void setDefault();
+
+	bool containPoint2(const int&, const int&);
+	bool mouseIn();
+	bool mouseClick();
+
+	void setX(const int&);
+	void setY(const int&);
+	void setWidth(const int&);
+	void setHeight(const int&);
+
+	int getX();
+	int getY();
+	int getWidth();
+	int getHeight();
+	int getRight();
+	int getBottom();
+
+	int normalTextColor, normalBackgroundColor, normalBorderColor;
+	int activeTextColor, activeBackgroundColor, activeBorderColor;
+	int borderSize;
+	int textFont;
+
 protected:
 
 	int textDistanceTop = 4;
@@ -44,6 +67,9 @@ RootUI::RootUI() {
 	height = 0;
 	xr = 0;
 	yb = 0;
+	
+	setDefault();
+
 }
 
 RootUI::RootUI(const int& setX, const int& setY, const int& setWidth, const int& setHeight) {
@@ -52,6 +78,58 @@ RootUI::RootUI(const int& setX, const int& setY, const int& setWidth, const int&
 	width = setWidth;
 	height = setHeight;
 	xr = x + width;
+	yb = y + height;
+
+	setDefault();
+}
+
+void RootUI::setDefault() {
+	normalTextColor = BLACK;
+	normalBackgroundColor = LIGHTGRAY;
+	normalBorderColor = WHITE;
+
+	activeTextColor = BLACK;
+	activeBackgroundColor = LIGHTGRAY;
+	activeBorderColor = BLUE;
+
+	borderSize = 2;
+	textFont = SANS_SERIF_FONT;
+}
+
+bool RootUI::containPoint2(const int& pointX, const int& pointY) {
+	return pointX >= x && pointX <= xr && pointY >= y && pointY <= yb;
+}
+
+bool RootUI::mouseIn() {
+	int mx = mousex();
+	int my = mousey();
+	return containPoint2(mx, my);
+}
+
+bool RootUI::mouseClick() {
+	if (ismouseclick(0x0201)) {
+		return mouseIn();
+	}
+	return 0;
+}
+
+void RootUI::setX(const int& setx) {
+	x = setx;
+	xr = x + width;
+}
+
+void RootUI::setY(const int& sety) {
+	y = sety;
+	yb = y + height;
+}
+
+void RootUI::setWidth(const int& setwidth) {
+	width = setwidth;
+	xr = x + width;
+}
+
+void RootUI::setHeight(const int& setheight) {
+	height = setheight;
 	yb = y + height;
 }
 
