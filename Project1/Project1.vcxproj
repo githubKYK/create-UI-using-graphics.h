@@ -131,9 +131,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
+    <ClInclude Include="Datagridview.h" />
+    <ClInclude Include="Json.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="Mymath.h" />
     <ClInclude Include="RootUI.h" />
+    <ClInclude Include="Stringextern.h" />
     <ClInclude Include="Textture.h" />
     <ClInclude Include="Windowproperties.h" />
   </ItemGroup>

@@ -40,6 +40,8 @@ public:
 	void setY(const int&);
 	void setWidth(const int&);
 	void setHeight(const int&);
+	void setTextSize(const int&);
+	void setTextFont(const int&);
 
 	int getX();
 	int getY();
@@ -47,11 +49,14 @@ public:
 	int getHeight();
 	int getRight();
 	int getBottom();
+	int getTextSize();
+	int getTextFont();
 
 	int normalTextColor, normalBackgroundColor, normalBorderColor;
 	int activeTextColor, activeBackgroundColor, activeBorderColor;
 	int borderSize;
 	int textFont;
+	int textSize;
 
 protected:
 
@@ -94,6 +99,7 @@ void RootUI::setDefault() {
 
 	borderSize = 2;
 	textFont = SANS_SERIF_FONT;
+	textSize = 1;
 }
 
 bool RootUI::containPoint2(const int& pointX, const int& pointY) {
@@ -131,6 +137,46 @@ void RootUI::setWidth(const int& setwidth) {
 void RootUI::setHeight(const int& setheight) {
 	height = setheight;
 	yb = y + height;
+}
+
+void RootUI::setTextSize(const int& setTextSize) {
+	textSize = setTextSize;
+}
+
+void RootUI::setTextFont(const int& setTextFont) {
+	textFont = setTextFont;
+}
+
+int RootUI::getX() {
+	return x;
+}
+
+int RootUI::getY() {
+	return y;
+}
+
+int RootUI::getWidth() {
+	return width;
+}
+
+int RootUI::getHeight() {
+	return height;
+}
+
+int RootUI::getRight() {
+	return xr;
+}
+
+int RootUI::getBottom() {
+	return yb;
+}
+
+int RootUI::getTextSize() {
+	return textSize;
+}
+
+int RootUI::getTextFont() {
+	return textFont;
 }
 
 void RootUI::textProperties(const int& color, const int& backgroudColor, const int& font,const int& derection, const int& size, const int& horiz, const int& vertical) {

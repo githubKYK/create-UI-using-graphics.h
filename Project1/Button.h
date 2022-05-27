@@ -19,10 +19,12 @@ private:
 
 Button::Button():RootUI() {
 	setText(const_cast<char*>("Button"));
+	textSize = 1;
 }
 
 Button::Button(const int& sX, const int& sY, const int& sW, const int& sH, char* sT):RootUI(sX, sY, sW, sH) {
 	setText(sT);
+	textSize = 1;
 }
 
 void Button::setText(char* sT) {
@@ -36,13 +38,13 @@ void Button::display(const int& mode, const int& textMode = 0, char* textWrite =
 	len = (len > 0) ? len : textLen;
 	if (mode == NORMAL) {
 		drawBackground(x, y, xr, yb, normalBackgroundColor, SOLID_FILL);
-		textProperties(normalTextColor, normalBackgroundColor, MWD::FONT2, LEFT_RIGHT, 1, CENTER_TEXT, VCENTER_TEXT);
+		textProperties(normalTextColor, normalBackgroundColor, MWD::FONT2, LEFT_RIGHT, textSize, CENTER_TEXT, VCENTER_TEXT);
 		writeText(textWrite, len, textMode, x, y, width, height, CENTER_TEXT);
 		drawBorder(x, y, xr, yb, normalBorderColor, borderSize);
 	}
 	else if (mode == ACTIVE) {
 		drawBackground(x, y, xr, yb, activeBackgroundColor, SOLID_FILL);
-		textProperties(activeTextColor, activeBackgroundColor, MWD::FONT2, LEFT_RIGHT, 1, CENTER_TEXT, VCENTER_TEXT);
+		textProperties(activeTextColor, activeBackgroundColor, MWD::FONT2, LEFT_RIGHT, textSize, CENTER_TEXT, VCENTER_TEXT);
 		writeText(textWrite, len, textMode, x, y, width, height, CENTER_TEXT);
 		drawBorder(x, y, xr, yb, activeBorderColor, borderSize);
 	}

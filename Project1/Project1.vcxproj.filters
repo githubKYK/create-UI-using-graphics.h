@@ -44,5 +44,14 @@
     <ClInclude Include="Label.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
+    <ClInclude Include="Datagridview.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Json.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Stringextern.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

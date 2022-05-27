@@ -20,10 +20,12 @@ private:
 
 Textture::Textture():RootUI() {
 	setText(const_cast<char*>("Textture"));
+	textSize = 1;
 }
 
 Textture::Textture(const int& sX, const int& sY, const int& sW, const int& sH, char* sT):RootUI(sX, sY, sW, sH) {
 	setText(sT);
+	textSize = 1;
 }
 
 void Textture::setText(char* sT) {
@@ -41,13 +43,13 @@ void Textture::display(const int& mode, const int& textMode, char* textWrite = 0
 	len = (len > 0) ? len : textLen;
 	if (mode == NORMAL) {
 		drawBackground(x, y, xr, yb, normalBackgroundColor, SOLID_FILL);
-		textProperties(normalTextColor, normalBackgroundColor, MWD::FONT2, LEFT_RIGHT, 1, LEFT_TEXT, VCENTER_TEXT);
+		textProperties(normalTextColor, normalBackgroundColor, MWD::FONT2, LEFT_RIGHT, textSize, LEFT_TEXT, VCENTER_TEXT);
 		writeText(textWrite, len, textMode, x, y, width, height, LEFT_TEXT);
 		drawBorder(x, y, xr, yb, normalBorderColor, borderSize);
 	}
 	else if (mode == ACTIVE) {
 		drawBackground(x, y, xr, yb, activeBackgroundColor, SOLID_FILL);
-		textProperties(activeTextColor, activeBackgroundColor, MWD::FONT2, LEFT_RIGHT, 1, LEFT_TEXT, VCENTER_TEXT);
+		textProperties(activeTextColor, activeBackgroundColor, MWD::FONT2, LEFT_RIGHT, textSize, LEFT_TEXT, VCENTER_TEXT);
 		writeText(textWrite, len, textMode, x, y, width, height, LEFT_TEXT);
 		drawBorder(x, y, xr, yb, activeBorderColor, borderSize);
 	}
