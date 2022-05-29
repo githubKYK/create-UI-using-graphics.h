@@ -93,16 +93,29 @@ private:
 	int sizeExten;
 };
 
-Array<string> split(const char& delim, string str) {
-	int size = 1;
-	for (size_t i = 0; i < str.length(); i++)
-		if (str[i] == delim)
-			size++;
-	Array<string> result;
-	for (size_t i = 0; i < size; i++) {
-		result.addElement(str.substr(0, str.find(delim)));
-		str.erase(0, str.find(delim) + 1);
-	}
+void split(Array<string> &rslt, string str, const char& delim) {
+	//int size = 1;
+	//for (size_t i = 0; i < str.length(); i++)
+	//	if (str[i] == delim)
+	//		size++;
+	//Array<string> result;
+	//for (size_t i = 0; i < size - 1; i++) {
+	//	result.addElement(str.substr(0, str.find(delim)));
+	//	str.erase(0, str.find(delim) + 1);
+	//}
 
-	return result;
+	//result.addElement(str);
+
+	Array<string> result;
+
+	while (true)
+	{
+		int l = str.find(delim);
+		if (l < 0) {
+			rslt.addElement(str);
+			break;
+		}
+		rslt.addElement(str.substr(0, l));
+		str.erase(0, l + 1);
+	}
 }

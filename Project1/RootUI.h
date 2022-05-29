@@ -91,7 +91,7 @@ RootUI::RootUI(const int& setX, const int& setY, const int& setWidth, const int&
 void RootUI::setDefault() {
 	normalTextColor = BLACK;
 	normalBackgroundColor = LIGHTGRAY;
-	normalBorderColor = WHITE;
+	normalBorderColor = BLACK;
 
 	activeTextColor = BLACK;
 	activeBackgroundColor = LIGHTGRAY;
